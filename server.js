@@ -27,7 +27,6 @@ fccTestingRoutes(app);
 
 // User routes
 userRoutes(app);
-    
 // 404 Not Found Middleware
 app.use(function(req, res, next) {
   res.status(404)

@@ -80,7 +80,6 @@ module.exports = function (app) {
     delete res._headers['strict-transport-security'];
     res.json({headers: hObj});
   });
-  
 };
 
 function testFilter(tests, type, n) {

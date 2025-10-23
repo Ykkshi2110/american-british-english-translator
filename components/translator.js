@@ -117,7 +117,7 @@ class Translator {
    * Translate a word from American to British
    * @param {string} word - Word to translate
    * @param {string} locale - Locale to use for the translation
-   * @returns {string} - Translated word with highlighted translation
+   * @returns {string} - Translated word with highlighted translationd 
    */
   translateToBritsh(word, locale) {
     let translation = "";
@@ -164,7 +164,6 @@ class Translator {
       let foundCombination = [];
       for (let i = 0; i < words.length; i++) {
         let temp = words[i];
-        // console.log(`${i} checking: `, temp);
         let translated = this.getTranslation(temp.toLowerCase(), locale);
         if (temp.toLowerCase() != translated) {
           foundCombination[temp] = translated;
@@ -172,7 +171,6 @@ class Translator {
         }
         for (let j = i + 1; j < words.length; j++) {
           temp = temp + " " + words[j];
-          // console.log(`${j} combination: `, temp);
           translated = this.getTranslation(temp.toLowerCase(), locale);
           if (temp.toLowerCase() != translated) {
             foundCombination[temp] = translated;
@@ -189,11 +187,7 @@ class Translator {
           translation = translation.replace(key, value);
         }
       });
-      //pre
-      // words.forEach((word) => {
-      //   translation = translation + " " + this.getTranslation(word, locale);
-      // });
-      //
+
 
       if (text == translation) {
         translation = "Everything looks good to me!";
